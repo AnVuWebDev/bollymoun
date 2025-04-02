@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
         canvas.height = window.innerHeight;
         
         const particles = [];
-        const particleCount = 150; // Plus de particules pour un effet plus dense
+        const particleCount = 100; // Plus de particules pour un effet plus dense
         
         // Couleurs des paillettes
         const colors = [
@@ -67,8 +67,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 y: Math.random() * canvas.height,
                 radius: Math.random() * 1.5 + 0.5, // Particules plus petites
                 color: colors[Math.floor(Math.random() * colors.length)],
-                speedX: (Math.random() - 0.5) * 3, // Mouvement plus rapide
-                speedY: (Math.random() - 0.5) * 3, // Mouvement plus rapide
+                speedX: (Math.random() - 0.5) * 1, // Mouvement lent
+                speedY: (Math.random() - 0.5) * 1, // Mouvement lent
                 opacity: Math.random(),
                 fadeDirection: Math.random() > 0.5 ? 1 : -1
             });

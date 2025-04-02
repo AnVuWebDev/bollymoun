@@ -31,7 +31,7 @@ html, body {
     background-color: rgba(var(--background-color), 1);
     background: radial-gradient(
         circle at center,
-        rgba(3, 92, 123, 0.45) 0%,      /* Bleu canard opacité 60% */
+        rgba(3, 92, 123, 0.5) 0%,      /* Bleu canard opacité 60% */
         rgba(3, 92, 123, 0.8) 50%,     /* Bleu canard opacité 80% */
         rgba(3, 92, 123, 1) 100%       /* Bleu canard opacité 100% */
     );
