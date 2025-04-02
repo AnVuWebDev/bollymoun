@@ -1,0 +1,367 @@
+@font-face {
+    font-family: 'RumbleBrave';
+    src: url('./font/Rumble-Brave.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; 
+}
+
+@font-face {
+    font-family: 'FootLightMTLight';
+    src: url('./font/footlight-mt-light.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; 
+}
+
+:root {
+    --primary-color: 14, 165, 233; /* #0EA5E9 bleu clair */
+    --secondary-color: 186, 230, 253; /* #*/
+    --background-color: 3, 92, 123; /* #035c7b bleu canard*/
+    --accent-color : 255, 236, 179; /* #FFECB3 jaune */
+    --white-color: 255, 255, 255; /* #FFFFFF Blanc Pur */
+    --text-color: 15, 23, 42; /* #0F172A texte foncé */
+    --font-family-header: 'Source Sans Pro', sans-serif;
+    --font-family-content: 'Nunito', sans-serif;
+    --font-family-size: 18px;
+}
+
+/* Style de base */
+html, body {
+    background-color: rgba(var(--background-color), 1);
+    background: radial-gradient(
+        circle at center,
+        rgba(3, 92, 123, 0.45) 0%,      /* Bleu canard opacité 60% */
+        rgba(3, 92, 123, 0.8) 50%,     /* Bleu canard opacité 80% */
+        rgba(3, 92, 123, 1) 100%       /* Bleu canard opacité 100% */
+    );
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Canvas pour les particules */
+#particles-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+h1, h2, .points {
+    background: linear-gradient(to bottom, #FF9800, #ffffff); /* Dégradé linéaire de jaune clair à orange */
+    -webkit-background-clip: text; /* Applique le dégradé au texte */
+    -webkit-text-fill-color: transparent;  
+    position: relative;
+    z-index: 2;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 95vh;
+    position: relative;
+    z-index: 2;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+h1, p {
+    font-family: 'RumbleBrave', sans-serif;
+    letter-spacing: 5px;
+    font-size: 5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.points {
+    font-size: 5rem;
+    height: 80px;
+    transition: all 0.3s ease;
+}
+
+h2 {
+    font-family: 'FootLightMTLight', serif;
+    letter-spacing: 1px;
+    font-size: 1.8rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+    max-width: 800px;
+}
+
+img {
+    height: 500px;
+    max-height: 40vh;
+    width: auto;
+    filter: drop-shadow(0 0 10px rgba(255, 236, 179, 0.3));
+    animation: float 10s ease-in-out infinite;
+    margin:0;
+    padding:0;
+}
+
+img:hover {
+    filter: drop-shadow(0 0 15px rgba(255, 236, 179, 0.6));
+    transform: none;
+}
+
+/* Animation float pour le logo */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-30px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Animation de rebond pour le logo */
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    40% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+    60% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Conteneur pour les boutons */
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 0.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.btn {
+    background: linear-gradient(to bottom, #fcdc7a, #FF9800);
+    color: rgba(var(--background-color),1);
+    border: none;
+    border-radius: 15px;
+    padding: 0.8rem 2rem;
+    font-family: 'FootLightMTLight', serif;
+    letter-spacing: 1px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin: 0 1rem 1rem 1rem;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    box-shadow: 
+        0 8px 15px rgba(0, 0, 0, 0.2),
+        0 4px 0 rgba(150, 80, 0, 0.5),
+        inset 0 2px 3px rgba(255, 255, 255, 0.6),
+        inset 0 -2px 3px rgba(0, 0, 0, 0.1);
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 
+        0 10px 20px rgba(0, 0, 0, 0.3),
+        0 6px 0 rgba(150, 80, 0, 0.5),
+        inset 0 2px 5px rgba(255, 255, 255, 0.6),
+        inset 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.btn:active {
+    transform: translateY(2px);
+    box-shadow: 
+        0 2px 5px rgba(0, 0, 0, 0.2),
+        0 1px 0 rgba(150, 80, 0, 0.5),
+        inset 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Effet de lumière au survol */
+.btn.glow-effect {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 152, 0, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(255, 152, 0, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 152, 0, 0);
+    }
+}
+
+/* Effet d'ondulation au clic */
+.btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%, -50%);
+    transform-origin: 50% 50%;
+}
+
+.btn:active::after {
+    animation: ripple 0.6s ease-out;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0, 0) translate(-50%, -50%);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(20, 20) translate(-50%, -50%);
+        opacity: 0;
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(var(--white-color),0.5);
+    font-family: var(--font-family-content);
+    position: relative;
+    z-index: 2;
+}
+
+footer p {
+    font-family: 'FootLightMTLight', serif;
+    letter-spacing: 1px;
+    font-size: 1rem;
+    animation: none;
+}
+
+/* Animation typographie */
+.reveal-text {
+    position: relative;
+    color: transparent;
+    animation: reveal 1.5s ease forwards;
+}
+
+@keyframes reveal {
+    0% {
+        color: transparent;
+    }
+    100% {
+        color: #ffffff;
+    }
+}
+
+
+/* Effet de texte qui brille */
+@keyframes textShine {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+h1, h2 {
+    background-size: 200% auto;
+    animation: textShine 3s linear infinite;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 1.2rem;
+        line-height: 1.4;
+        margin: 10px 0;
+    }
+    
+    img {
+        max-height: 28vh;
+    }
+    
+    .points {
+        font-size: 2.5rem;
+        height: 40px;
+        margin: 5px 0;
+    }
+    
+    .btn {
+        font-size: 1.2rem;
+        padding: 0.6rem 1.5rem;
+        margin: 0 0.5rem 0.8rem 0.5rem;
+    }
+}
+
+/* Pour les très petits écrans */
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+    
+    img {
+        max-height: 25vh;
+    }
+    
+    .points {
+        font-size: 2rem;
+        height: 30px;
+    }
+    
+    .button-container {
+        flex-direction: column;
+    }
+    
+    .btn {
+        margin: 0.4rem 0;
+        width: 200px;
+    }
+}
