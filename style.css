@@ -40,6 +40,16 @@ html, body {
     height: 100vh;
     overflow-x: hidden;
     position: relative;
+    font-family: 'FootLightMTLight', serif;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 95vh;
+    position: relative;
+    z-index: 2;
 }
 
 /* Canvas pour les particules */
@@ -59,17 +69,7 @@ h1, h2, .points {
     -webkit-text-fill-color: transparent;  
     position: relative;
     z-index: 2;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 95vh;
-    position: relative;
-    z-index: 2;
+    font-weight: 300;
 }
 
 section {
@@ -83,21 +83,20 @@ section {
 }
 
 h1, p {
-    font-family: 'RumbleBrave', sans-serif;
     letter-spacing: 5px;
-    font-size: 5rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    font-size: 4rem;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
 }
 
 .points {
     font-size: 5rem;
     height: 80px;
+
     transition: all 0.3s ease;
 }
 
 h2 {
-    font-family: 'FootLightMTLight', serif;
     letter-spacing: 1px;
     font-size: 1.8rem;
     line-height: 1.5;
@@ -106,7 +105,7 @@ h2 {
 }
 
 img {
-    height: 500px;
+    height: 40vh;
     max-height: 40vh;
     width: auto;
     filter: drop-shadow(0 0 10px rgba(255, 236, 179, 0.3));
@@ -126,7 +125,7 @@ img:hover {
         transform: translateY(0px);
     }
     50% {
-        transform: translateY(-30px);
+        transform: translateY(-15px);
     }
     100% {
         transform: translateY(0px);
@@ -163,7 +162,7 @@ img:hover {
 }
 
 .btn {
-    background: linear-gradient(to bottom, #fcdc7a, #FF9800);
+    background: linear-gradient(to bottom, #fcdc7a, #Ffffff);
     color: rgba(var(--background-color),1);
     border: none;
     border-radius: 15px;
@@ -171,7 +170,8 @@ img:hover {
     font-family: 'FootLightMTLight', serif;
     letter-spacing: 1px;
     font-size: 1.5rem;
-    font-weight: bold;
+    font-weight: 400;
+    width: 150px;
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -333,6 +333,7 @@ h1, h2 {
         font-size: 1.2rem;
         padding: 0.6rem 1.5rem;
         margin: 0 0.5rem 0.8rem 0.5rem;
+        width: 100px;
     }
 }
 
@@ -361,7 +362,7 @@ h1, h2 {
     }
     
     .btn {
-        margin: 0.4rem 0;
-        width: 200px;
+        margin: 0.8rem 0;
+        width: 100px;
     }
 }
