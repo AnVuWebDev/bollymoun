@@ -296,7 +296,6 @@ h1, h2 {
     }
 }
 
-
 /* Responsive adjustments */
 @media screen and (max-width: 768px) {
     h1 {
@@ -310,7 +309,7 @@ h1, h2 {
     }
     
     img {
-        max-height: 28vh;
+        max-height: 40vh;
     }
     
     .points {
@@ -339,7 +338,7 @@ h1, h2 {
     }
     
     img {
-        max-height: 30vh;
+        max-height: 33vh;
     }
     
     .points {
